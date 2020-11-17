@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -15,6 +16,8 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+
+import java.util.Objects;
 
 public class SignIn extends AppCompatActivity {
     Button SignIn;
@@ -41,20 +44,25 @@ public class SignIn extends AppCompatActivity {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
 
+                        mDialog.dismiss();
                         if(dataSnapshot.child(phone.getText().toString()).exists()){
 
-                        mDialog.dismiss();
+//                            Log.d("loged in", "loged in");
                         User user = dataSnapshot.child(phone.getText().toString()).getValue(User.class);
-                        if(user.getPassword().equals(pass.getText().toString())){
-                            Toast.makeText(SignIn.this,"Sign in successfully", Toast.LENGTH_SHORT).show();
-                            // TODO: Gọi đến home
+                            Log.d("userFirebase", "onDataChange: "+user.Name);
+//                            Log.d("userFirebase", "onDataChange: "+user.);
+                            Log.d("userFirebase", "onDataChange: "+pass.getText().toString());
+
+
+                            if (Objects.equals(user.getPassword(), pass.getText().toString())){
+                                Toast.makeText(SignIn.this, "Sign in successfully", Toast.LENGTH_SHORT).show();
+                                // TODO: Gọi đến home
+                                Log.d("loged in", "loged in");
+                            } else {
+                                Toast.makeText(SignIn.this, "Wrong Password", Toast.LENGTH_SHORT).show();
+                            }
                         }
                         else{
-                            Toast.makeText(SignIn.this,"Wrong Password", Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                        else{
-                            mDialog.dismiss();
                             Toast.makeText(SignIn.this,"User not exist in database", Toast.LENGTH_SHORT).show();
                         }
                     }
