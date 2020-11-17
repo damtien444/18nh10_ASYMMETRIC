@@ -46,7 +46,8 @@ public class SignIn extends AppCompatActivity {
                         mDialog.dismiss();
                         User user = dataSnapshot.child(phone.getText().toString()).getValue(User.class);
                         if(user.getPassword().equals(pass.getText().toString())){
-                            Toast.makeText(SignIn.this,"Sign in sucessfully", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(SignIn.this,"Sign in successfully", Toast.LENGTH_SHORT).show();
+                            // TODO: Gọi đến home
                         }
                         else{
                             Toast.makeText(SignIn.this,"Wrong Password", Toast.LENGTH_SHORT).show();

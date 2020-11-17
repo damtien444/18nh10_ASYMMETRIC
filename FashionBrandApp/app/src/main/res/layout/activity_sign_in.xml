@@ -14,7 +14,7 @@
         <EditText
             android:layout_marginBottom="20dp"
             android:id="@+id/phone"
-            android:hint="  Input Number Phone"
+            android:hint="  Input your phone number"
             android:background="@color/colorsignin"
             android:layout_width="match_parent"
             android:layout_marginLeft="12dp"
