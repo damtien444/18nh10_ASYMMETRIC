@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="60f3291a-15b4-4575-9d0f-6c9e71042d98" name="Default Changelist" comment="" />
+    <list default="true" id="60f3291a-15b4-4575-9d0f-6c9e71042d98" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/FashionBrandApp" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1kPc72d85wBRB7maiKAzaHcNK6b" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -35,9 +38,13 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="800" y="314" key="FileChooserDialogImpl" timestamp="1605605583386">
+    <state x="800" y="314" key="FileChooserDialogImpl" timestamp="1605606518246">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="800" y="314" key="FileChooserDialogImpl/0.0.1920.1050@0.0.1920.1050" timestamp="1605605583386" />
+    <state x="800" y="314" key="FileChooserDialogImpl/0.0.1920.1050@0.0.1920.1050" timestamp="1605606518246" />
+    <state x="656" y="348" key="com.intellij.ide.util.TipDialog" timestamp="1605606504244">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="656" y="348" key="com.intellij.ide.util.TipDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1605606504244" />
   </component>
 </project>
