@@ -1,77 +1,78 @@
 package com.lienhuong.fashionbrandapp;
 
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.Objects;
 
 public class SignIn extends AppCompatActivity {
-    Button SignIn;
-    EditText phone,pass;
-
+    EditText email, pass;
+    TextView tv_register;
+    Button btn_login;
+    FirebaseAuth fAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in);
-        phone = (EditText)findViewById(R.id.phone);
-        pass = (EditText)findViewById(R.id.pass);
-        SignIn = (Button)findViewById(R.id.SignIn);
+        add();
+    }
 
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        final DatabaseReference table_user = database.getReference("User");
+    private void add() {
+        email=findViewById(R.id.email2);
+        pass=findViewById(R.id.pass2);
+        fAuth= FirebaseAuth.getInstance();
+        tv_register=findViewById(R.id.tv_register);
+        btn_login=findViewById(R.id.button2);
 
-        SignIn.setOnClickListener(new View.OnClickListener() {
+        btn_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                final ProgressDialog mDialog = new ProgressDialog(SignIn.this);
-                mDialog.setMessage("Please waiting..");
-                mDialog.show();
-                table_user.addValueEventListener(new ValueEventListener() {
+                String email_1=email.getText().toString().trim();
+                String pass_1=pass.getText().toString().trim();
+                if(TextUtils.isEmpty(email_1))
+                {
+                    email.setError("Require Input Email!!");
+                    return;
+                }
+                if(TextUtils.isEmpty(pass_1))
+                {
+                    pass.setError("Require Input Password!!");
+                    return;
+                }
+                fAuth.signInWithEmailAndPassword(email_1,pass_1).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
-                    public void onDataChange(DataSnapshot dataSnapshot) {
-
-                        mDialog.dismiss();
-                        if(dataSnapshot.child(phone.getText().toString()).exists()){
-
-//                            Log.d("loged in", "loged in");
-                        User user = dataSnapshot.child(phone.getText().toString()).getValue(User.class);
-                            Log.d("userFirebase", "onDataChange: "+user.Name);
-//                            Log.d("userFirebase", "onDataChange: "+user.);
-                            Log.d("userFirebase", "onDataChange: "+pass.getText().toString());
-
-
-                            if (Objects.equals(user.getPassword(), pass.getText().toString())){
-                                Toast.makeText(SignIn.this, "Sign in successfully", Toast.LENGTH_SHORT).show();
-                                // TODO: Gọi đến home
-                                Log.d("loged in", "loged in");
-                            } else {
-                                Toast.makeText(SignIn.this, "Wrong Password", Toast.LENGTH_SHORT).show();
-                            }
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if(task.isSuccessful())
+                        {
+                            Toast.makeText(SignIn.this, "Login success!!", Toast.LENGTH_LONG).show();
+                            startActivity(new Intent(getApplicationContext(), Home.class));
                         }
                         else{
-                            Toast.makeText(SignIn.this,"User not exist in database", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(SignIn.this, "Error "+task.getException() , Toast.LENGTH_LONG).show();
                         }
                     }
-
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError error) {
-
-                    }
                 });
+            }
+        });
+        tv_register.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(SignIn.this, SignUp.class));
             }
         });
     }
