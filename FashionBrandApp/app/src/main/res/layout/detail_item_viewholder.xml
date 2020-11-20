@@ -3,28 +3,60 @@
     android:id="@+id/detail_item"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android"
-
     android:layout_height="wrap_content"
     android:layout_width="match_parent"
     android:layout_gravity="center"
-    app:cardCornerRadius="15dp"
-    app:cardBackgroundColor="@color/red"
     >
+
     <androidx.appcompat.widget.LinearLayoutCompat
+        android:background="@color/cardview_light_background"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
-
         <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/product_display_image"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
-            app:srcCompat="@drawable/ic_launcher_foreground"/>
+            android:layout_height="300dp"
+            android:adjustViewBounds="true"
+            />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Product Name: " />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/name"
+                android:layout_width="150dp"
+                android:layout_height="match_parent"
+                android:text="name HERE" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="PRICE: "
+                android:textAlignment="viewEnd"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/price"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="100000"
+                android:textAlignment="viewEnd"/>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/description"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:text="DEMO"/>
+            android:text="description HERE" />
     </androidx.appcompat.widget.LinearLayoutCompat>
 
 </androidx.cardview.widget.CardView>

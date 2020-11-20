@@ -1,23 +1,30 @@
 package com.lienhuong.fashionbrandapp.itemDetail;
 
+import android.graphics.Bitmap;
+import android.graphics.drawable.Drawable;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ViewTreeObserver;
+import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.lienhuong.fashionbrandapp.R;
+import com.lienhuong.fashionbrandapp.model.Product;
+import com.squareup.picasso.Picasso;
+import com.squareup.picasso.Target;
 
 import java.util.ArrayList;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
-    private ArrayList<String> localDataSet;
+    private ArrayList<Product> localDataSet;
+    private Product tempProduct;
 
-    public MyAdapter(ArrayList<String> dataSet) {
-        Log.d("TAG", "init.... detail list "+ dataSet.size());
+
+    public MyAdapter(ArrayList<Product> dataSet) {
         localDataSet = dataSet;
     }
 
@@ -30,23 +37,52 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     }
     @Override
     public void onBindViewHolder(ViewHolder viewHolder, final int position) {
-        viewHolder.getTextView().setText(localDataSet.get(position));
-        Log.d("TAG", "inited "+ localDataSet.get(position));
+        tempProduct = localDataSet.get(position);
+        viewHolder.populateData(tempProduct);
     }
     @Override
     public int getItemCount() {
         return localDataSet.size();
     }
 
-    public static class ViewHolder extends RecyclerView.ViewHolder {
-        private final TextView textView;
+    public static class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
+        private final TextView textView_description;
+        private final TextView textView_price;
+        private final TextView textView_name;
+        private final ImageView imageView;
+        private int finalHeight, finalWidth;
 
         public ViewHolder(View view) {
             super(view);
-            textView = (TextView) view.findViewById(R.id.description);
+            view.setOnClickListener(this);
+            textView_description = (TextView) view.findViewById(R.id.description);
+            textView_price = (TextView) view.findViewById(R.id.price);
+            textView_name = (TextView) view.findViewById(R.id.name);
+            imageView = view.findViewById(R.id.product_display_image);
         }
-        public TextView getTextView() {
-            return textView;
+
+        public void populateData(Product targetProduct){
+            this.textView_description.setText(targetProduct.getMota());
+            this.textView_price.setText(targetProduct.getGia());
+            this.textView_name.setText(targetProduct.getName());
+
+            ViewTreeObserver vto = imageView.getViewTreeObserver();
+            vto.addOnPreDrawListener(new ViewTreeObserver.OnPreDrawListener() {
+                public boolean onPreDraw() {
+                    imageView.getViewTreeObserver().removeOnPreDrawListener(this);
+                    finalHeight = imageView.getMeasuredHeight();
+                    finalWidth = imageView.getMeasuredWidth();
+                    Log.d("TAG", ":size: " + finalHeight + ", " + finalWidth);
+                    Picasso.get().load(targetProduct.getImage()).resize(finalWidth,finalHeight).centerCrop()
+                            .into(imageView);
+                    return true;
+                }
+            });
+        }
+
+        @Override
+        public void onClick(View v) {
+            Log.d("TAG", "Clicked on " + textView_name.getText());
         }
     }
 }
