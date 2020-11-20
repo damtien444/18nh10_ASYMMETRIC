@@ -1,5 +1,6 @@
 package com.lienhuong.fashionbrandapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Menu;
@@ -7,6 +8,7 @@ import android.view.Menu;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
+import com.lienhuong.fashionbrandapp.itemDetail.ItemDetailsDisplayerActivity;
 
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -32,6 +34,8 @@ public class Home extends AppCompatActivity {
             public void onClick(View view) {
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
+                Intent t = new Intent(Home.this, ItemDetailsDisplayerActivity.class);
+                startActivity(t);
             }
         });
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
