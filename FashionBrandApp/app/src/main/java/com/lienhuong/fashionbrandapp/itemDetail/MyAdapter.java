@@ -1,5 +1,6 @@
 package com.lienhuong.fashionbrandapp.itemDetail;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 import android.util.Log;
@@ -32,7 +33,6 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     public ViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
         View view = LayoutInflater.from(viewGroup.getContext())
                 .inflate(R.layout.detail_item_viewholder, viewGroup, false);
-        Log.d("TAG", "detail list created");
         return new ViewHolder(view);
     }
     @Override
@@ -49,15 +49,19 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         private final TextView textView_description;
         private final TextView textView_price;
         private final TextView textView_name;
+        private String product_id;
+
         private final ImageView imageView;
         private int finalHeight, finalWidth;
 
         public ViewHolder(View view) {
             super(view);
             view.setOnClickListener(this);
+
             textView_description = (TextView) view.findViewById(R.id.description);
             textView_price = (TextView) view.findViewById(R.id.price);
             textView_name = (TextView) view.findViewById(R.id.name);
+
             imageView = view.findViewById(R.id.product_display_image);
         }
 
@@ -65,14 +69,18 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
             this.textView_description.setText(targetProduct.getMota());
             this.textView_price.setText(targetProduct.getGia());
             this.textView_name.setText(targetProduct.getName());
+            loadFromImageURIToImageView(targetProduct);
 
+            product_id = targetProduct.getId();
+        }
+
+        private void loadFromImageURIToImageView(Product targetProduct) {
             ViewTreeObserver vto = imageView.getViewTreeObserver();
             vto.addOnPreDrawListener(new ViewTreeObserver.OnPreDrawListener() {
                 public boolean onPreDraw() {
                     imageView.getViewTreeObserver().removeOnPreDrawListener(this);
                     finalHeight = imageView.getMeasuredHeight();
                     finalWidth = imageView.getMeasuredWidth();
-                    Log.d("TAG", ":size: " + finalHeight + ", " + finalWidth);
                     Picasso.get().load(targetProduct.getImage()).resize(finalWidth,finalHeight).centerCrop()
                             .into(imageView);
                     return true;
@@ -82,7 +90,9 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 
         @Override
         public void onClick(View v) {
-            Log.d("TAG", "Clicked on " + textView_name.getText());
+            //Intent detailIntent = new Intent(ProductDetail.class);
+            //detailIntent.putExtra("ProductId", product_id);
+            //startActivity(detailIntent);
         }
     }
 }

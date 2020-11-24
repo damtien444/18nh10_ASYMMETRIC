@@ -1,6 +1,7 @@
 package com.lienhuong.fashionbrandapp.model;
 
 public class Product {
+    private String id;
     private String Color, Gia, Image, Mota, Name;
     public Product(){
 
@@ -12,7 +13,8 @@ public class Product {
         this.Mota = targetProductToCopyFrom.Mota;
         this.Name = targetProductToCopyFrom.Name;
     }
-    public Product(String Color, String Gia, String Image, String Mota, String Name) {
+    public Product(String id, String Color, String Gia, String Image, String Mota, String Name) {
+        this.id = id;
         this.Color = Color;
         this.Gia = Gia;
         this.Image = Image;
@@ -20,8 +22,12 @@ public class Product {
         this.Name = Name;
     }
 
-    public String getcolor() {
-        return Color;
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+         this.id = id;
     }
 
     public void setColor(String Color) {
