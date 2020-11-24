@@ -89,6 +89,7 @@ public class SignUp extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
                             Toast.makeText(SignUp.this,"Create User", LENGTH_SHORT).show();
+                            startActivity(new Intent(getApplicationContext(), Home.class));
                         }
                         else{
                             Toast.makeText(SignUp.this, "Error "+task.getException() , Toast.LENGTH_SHORT).show();
@@ -102,7 +103,7 @@ public class SignUp extends AppCompatActivity {
         tv_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), SignIn.class));
+                startActivity(new Intent(getApplicationContext(), MainActivity.class));
             }
         });
         sign_gg.setOnClickListener(new View.OnClickListener() {
