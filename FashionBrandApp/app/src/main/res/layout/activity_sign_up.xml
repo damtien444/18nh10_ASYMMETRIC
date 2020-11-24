@@ -4,18 +4,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@mipmap/ic_launcher_foreground"
     tools:context=".SignUp">
 
-    <ImageView
-        android:id="@+id/icon"
-        android:layout_width="415dp"
-        android:layout_height="89dp"
-        android:src="@mipmap/login"
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Become our members"
+        android:textColor="#2196F3"
+        android:textColorHighlight="#FFFFFF"
+        android:textColorHint="#FFFFFF"
+        android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.178"></ImageView>
+        app:layout_constraintVertical_bias="0.178" />
 
     <TextView
         android:id="@+id/textView2"
@@ -24,7 +30,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/icon"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
         app:layout_constraintVertical_bias="0.029" />
 
     <EditText
@@ -34,9 +40,9 @@
         android:ems="10"
         android:hint="Name"
         android:inputType="textPersonName"
-        android:textColor="#131111"
-        android:textColorHighlight="#090707"
-        android:textColorHint="#0C0808"
+        android:textColor="#FFFFFF"
+        android:textColorHighlight="#FFFFFF"
+        android:textColorHint="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -50,10 +56,10 @@
         android:ems="10"
         android:hint="Email"
         android:inputType="textEmailAddress"
-        android:textColor="#020101"
-        android:textColorHighlight="#0B0707"
-        android:textColorHint="#050202"
-        android:textColorLink="#070505"
+        android:textColor="#FFFFFF"
+        android:textColorHighlight="#FFFFFF"
+        android:textColorHint="#FFFFFF"
+        android:textColorLink="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/name1" />
@@ -65,34 +71,33 @@
         android:ems="10"
         android:hint="PassWord"
         android:inputType="textPassword"
-        android:textColor="#100C0C"
-        android:textColorHighlight="#0B0808"
-        android:textColorHint="#070303"
-        android:textColorLink="#070606"
+        android:textColor="#FFFFFF"
+        android:textColorHighlight="#FFFFFF"
+        android:textColorHint="#FFFFFF"
+        android:textColorLink="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/email1" />
 
     <Button
         android:id="@+id/button1"
-        android:layout_width="124dp"
-        android:layout_height="34dp"
-        android:background="#FFEB3B"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:background="#6AFFFFFF"
         android:text="REGISTER"
-        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.61" />
+        app:layout_constraintVertical_bias="0.587" />
 
     <TextView
         android:id="@+id/tv_login"
-        android:layout_width="240dp"
-        android:layout_height="27dp"
-        android:text="Have already an account? Login here!"
-        android:textColor="#030304"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Already Register !! Login Here?"
+        android:textColor="#03A9F4"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -101,12 +106,12 @@
 
     <TextView
         android:id="@+id/sign_gg"
-        android:layout_width="241dp"
-        android:layout_height="44dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:drawableStart="@drawable/common_google_signin_btn_icon_dark_focused"
         android:gravity="center_vertical"
-        android:text=" Sign In With Google"
-        android:textColor="#050404"
+        android:text="Sign In With Google"
+        android:textColor="#FFFFFF"
         android:textSize="18dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
