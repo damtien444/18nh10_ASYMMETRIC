@@ -102,7 +102,7 @@ public class HomeFragment extends Fragment {
 
 //                         goi den tri
                         Intent foodlist = new Intent(getContext(), ItemDetailsDisplayerActivity.class);
-                        foodlist.putExtra("CategoryId", adapter.getRef(position).getKey());
+                        foodlist.putExtra("Category", adapter.getRef(position).getKey());
                         startActivity(foodlist);
                     }
                 });
