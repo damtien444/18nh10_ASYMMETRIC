@@ -8,20 +8,20 @@
 
     <ImageView
         android:id="@+id/shopnow"
-        android:layout_width="413dp"
-        android:layout_height="237dp"
-        android:src="@mipmap/logo"
+        android:layout_width="220dp"
+        android:layout_height="140dp"
+        android:src="@drawable/shop_now"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.05"></ImageView>
+        app:layout_constraintVertical_bias="0.177" />
 
     <EditText
         android:id="@+id/email2"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="80dp"
         android:ems="10"
         android:hint="Email"
         android:inputType="textEmailAddress"
@@ -30,6 +30,7 @@
         android:textColorHint="#100B0B"
         android:textColorLink="#130C0C"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/shopnow" />
 
@@ -38,7 +39,7 @@
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="PassWord"
+        android:hint="Password"
         android:inputType="textPassword"
         android:textColor="#0C0B0B"
         android:textColorHighlight="#0C0909"
@@ -74,7 +75,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button2"
-        app:layout_constraintVertical_bias="0.093" />
+        app:layout_constraintVertical_bias="0.75" />
 
     <TextView
         android:id="@+id/tv_register"
