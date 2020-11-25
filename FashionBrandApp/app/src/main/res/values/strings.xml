@@ -24,6 +24,7 @@
     <string name="menu_order">Your orders</string>
     <string name="menu_logout">Log out</string>
     <string name="title_activity_item_details_displayer">ItemDetailsDisplayerActivity</string>
+    <string name="best_shop_ever">Best shop ever!</string>
     <!-- Strings used for fragments for navigation -->
 
     <!--    <string name="default_web_client_id">1033252531075-a09d0emp0oge6en3nhk1bmm0gos9och7.apps.googleusercontent.com</string>-->

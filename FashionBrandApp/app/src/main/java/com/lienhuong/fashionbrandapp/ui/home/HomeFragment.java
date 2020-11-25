@@ -21,6 +21,7 @@ import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.OnLifecycleEvent;
 import androidx.lifecycle.ViewModelProviders;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.RecyclerView.LayoutManager;
@@ -90,7 +91,9 @@ public class HomeFragment extends Fragment {
 
                 viewHolder.textMenuName.setText(model.getName());
                 //Picasso.get(getApplicationContext()).load(model.getImage()).into(viewHolder.imageView);
-                Glide.with(getContext()).load(model.getImage()).into(viewHolder.imageView);
+                Glide.with(getContext()).load(model.getImage())
+                        .centerCrop()
+                        .into(viewHolder.imageView);
 
                 Log.d("LET SEE", "onBindViewHolder: "+model.getName());
                 final Category clickItem = model;

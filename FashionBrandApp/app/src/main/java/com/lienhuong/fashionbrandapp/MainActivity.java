@@ -116,9 +116,7 @@ public class MainActivity extends AppCompatActivity {
                         if (task.isSuccessful()){
                             // Login w/ correct information
                             FirebaseUser user = fAuth.getCurrentUser();
-
                             startActivity(new Intent(getApplicationContext(), Home.class));
-
                             // TODO: update UI when success sign in
                         }else{
                             // login fail
@@ -130,41 +128,6 @@ public class MainActivity extends AppCompatActivity {
                 });
     }
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if( requestCode == RC_SIGN_IN){
-            Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
-            handleSignInResult(task);
-        }
-    }
 
-    private void handleSignInResult(Task<GoogleSignInAccount> completedTask){
-        try {
-            GoogleSignInAccount acc = completedTask.getResult(ApiException.class);
-            Toast.makeText(MainActivity.this, "Signed In Successfully", Toast.LENGTH_SHORT).show();
-            FirebaseGoogleAuth(acc);
-        } catch (ApiException e) {
-            Toast.makeText(MainActivity.this, "Signed In Failed", Toast.LENGTH_SHORT).show();
-//            FirebaseGoogleAuth(null);
-        }
-    }
-
-    private void FirebaseGoogleAuth(GoogleSignInAccount acct){
-        AuthCredential authCredential = GoogleAuthProvider.getCredential(acct.getIdToken(), null);
-        fAuth.signInWithCredential(authCredential).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-            @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
-                if(task.isSuccessful()){
-                    Toast.makeText(MainActivity.this, "Successful", Toast.LENGTH_SHORT).show();
-                    FirebaseUser user = fAuth.getCurrentUser();
-                    startActivity(new Intent(getApplicationContext(), Home.class));
-
-                } else {
-                    Toast.makeText(MainActivity.this, "Failed", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
-    }
 
 }

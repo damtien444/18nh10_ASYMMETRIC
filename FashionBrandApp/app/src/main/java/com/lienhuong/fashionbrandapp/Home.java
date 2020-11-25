@@ -60,8 +60,7 @@ public class Home extends AppCompatActivity {
             public void onClick(View view) {
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
-//                Intent t = new Intent(Home.this, ItemDetailsDisplayerActivity.class);
-//                startActivity(t);
+                // TODO: Call cart activity
             }
         });
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
@@ -69,7 +68,7 @@ public class Home extends AppCompatActivity {
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_cart, R.id.nav_order)
+                R.id.nav_home, R.id.nav_cart, R.id.nav_order, R.id.nav_logout)
                 .setDrawerLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
@@ -82,6 +81,8 @@ public class Home extends AppCompatActivity {
 //        else txtViewUsername.setText(FirebaseAuth.getInstance().getCurrentUser().getDisplayName());
 
 
+
+
     }
 
 
@@ -89,6 +90,8 @@ public class Home extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.home, menu);
+
+
         return true;
     }
 
