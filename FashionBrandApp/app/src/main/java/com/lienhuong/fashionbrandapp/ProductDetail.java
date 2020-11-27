@@ -6,6 +6,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.media.Image;
 import android.util.Log;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -31,6 +32,7 @@ public class ProductDetail extends AppCompatActivity {
     FirebaseDatabase database;
     DatabaseReference products;
     private String productCategory;
+    Product product;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,10 +41,19 @@ public class ProductDetail extends AppCompatActivity {
 
 //        //database
         database = FirebaseDatabase.getInstance();
-        products = database.getReference("Products");
+        products = database.getReference();
 
         //Init View
         numberButton = (ElegantNumberButton) findViewById(R.id.number_button);
+        numberButton.setOnValueChangeListener(new ElegantNumberButton.OnValueChangeListener() {
+            @Override
+            public void onValueChange(ElegantNumberButton view, int oldValue, int newValue) {
+//                Log.d(TAG, String.format("oldValue: %d   newValue: %d", oldValue, newValue));
+                int newPrice = Integer.parseInt(product.getGia()) * newValue;
+                Log.d("TAG","newPrice " + newPrice);
+                product_price.setText(newPrice + "");
+            }
+        });
         btnCart = (FloatingActionButton) findViewById(R.id.btnCart);
 
         product_description = (TextView) findViewById(R.id.product_description);
@@ -66,13 +77,11 @@ public class ProductDetail extends AppCompatActivity {
         products.child("Category/" + productCategory + "/danh_sach/" + productId).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                Log.d("TAG","Category/" + productCategory + "/danh_sach/" + productId);
-                Log.d("TAG","snapshot:" + snapshot.toString());
-                Product product = snapshot.getValue(Product.class);
+                 product = snapshot.getValue(Product.class);
                 //set Image
                 Glide.with(getBaseContext()).load(product.getImage())
                         .into(product_image);
-                collapsingToolbarLayout.setTitle(product.getName());
+//                collapsingToolbarLayout.setTitle(product.getName());
 
                 product_price.setText(product.getGia());
                 product_name.setText(product.getName());
@@ -87,4 +96,14 @@ public class ProductDetail extends AppCompatActivity {
             }
         });
     }
+//    public void changeCost(View view){
+//        Log.d("TAG","gia" + product_price.getText());
+//        Log.d("TAG","gia1" + Integer.parseInt(product.getGia()));
+//        Log.d("TAG","" +Integer.parseInt(numberButton.getNumber()));
+//        int newPrice = Integer.parseInt(product.getGia()) * Integer.parseInt(numberButton.getNumber());
+//        Log.d("TAG","newPrice " + newPrice);
+//        product_price.setText(newPrice + "");
+//        Log.d("TAG","gia" + product_price.getText());
+//        Log.d("TAG","" + Integer.parseInt(numberButton.getNumber()));
+//    }
 }
