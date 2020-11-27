@@ -125,11 +125,28 @@ public class MainActivity extends AppCompatActivity {
             GoogleSignInAccount account;
             account = completedTask.getResult(ApiException.class);
             Toast.makeText(MainActivity.this, "Signed In Successfully", Toast.LENGTH_SHORT).show();
-            startActivity(new Intent(MainActivity.this, Home.class));
+//            startActivity(new Intent(MainActivity.this, Home.class));
+            FirebaseGoogleAuth(account);
         } catch (ApiException e) {
             Toast.makeText(MainActivity.this, "Signed In Failed", Toast.LENGTH_SHORT).show();
 //            FirebaseGoogleAuth(null);
         }
+    }
+
+    private void FirebaseGoogleAuth(GoogleSignInAccount acct){
+        AuthCredential authCredential = GoogleAuthProvider.getCredential(acct.getIdToken(), null);
+        fAuth.signInWithCredential(authCredential).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if(task.isSuccessful()){
+                    Toast.makeText(MainActivity.this, "Successful", Toast.LENGTH_SHORT).show();
+                    FirebaseUser user = fAuth.getCurrentUser();
+                    startActivity(new Intent(MainActivity.this, Home.class));
+                } else {
+                    Toast.makeText(MainActivity.this, "Failed", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
     }
 
     public void login(String email, String password){
