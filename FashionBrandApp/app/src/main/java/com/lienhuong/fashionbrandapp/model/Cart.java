@@ -1,11 +1,12 @@
 package com.lienhuong.fashionbrandapp.model;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 
 public class Cart {
-    private static LinkedList<Order> orders = new LinkedList<>();
-
-
+    public static ArrayList<Order> orders = new ArrayList<Order>();
+    public Cart(){
+    }
     public static boolean addToCart(Order order) {
         try {
             Cart.orders.add(order);
@@ -27,11 +28,11 @@ public class Cart {
 
     private static String UID;
 
-    public static LinkedList<Order> getOrders() {
+    public static ArrayList<Order> getOrders() {
         return orders;
     }
 
-    public static void setOrders(LinkedList<Order> orders) {
+    public static void setOrders(ArrayList<Order> orders) {
         Cart.orders = orders;
     }
 
