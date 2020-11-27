@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.cepheuen.elegantnumberbutton.view.ElegantNumberButton;
@@ -19,6 +20,8 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.lienhuong.fashionbrandapp.model.Cart;
+import com.lienhuong.fashionbrandapp.model.Order;
 import com.lienhuong.fashionbrandapp.model.Product;
 import com.squareup.picasso.Picasso;
 
@@ -33,28 +36,31 @@ public class ProductDetail extends AppCompatActivity {
     DatabaseReference products;
     private String productCategory;
     Product product;
+    int soLuong = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_product_detail);
 
-//        //database
+
         database = FirebaseDatabase.getInstance();
         products = database.getReference();
 
-        //Init View
+
         numberButton = (ElegantNumberButton) findViewById(R.id.number_button);
         numberButton.setOnValueChangeListener(new ElegantNumberButton.OnValueChangeListener() {
             @Override
             public void onValueChange(ElegantNumberButton view, int oldValue, int newValue) {
-//                Log.d(TAG, String.format("oldValue: %d   newValue: %d", oldValue, newValue));
+
                 int newPrice = Integer.parseInt(product.getGia()) * newValue;
                 Log.d("TAG","newPrice " + newPrice);
                 product_price.setText(newPrice + "");
+                soLuong = newValue;
             }
         });
         btnCart = (FloatingActionButton) findViewById(R.id.btnCart);
+
 
         product_description = (TextView) findViewById(R.id.product_description);
         product_name = (TextView) findViewById(R.id.product_name);
@@ -64,7 +70,7 @@ public class ProductDetail extends AppCompatActivity {
 //        collapsingToolbarLayout = (CollapsingToolbarLayout)findViewById(R.id.collapsing);
 //        collapsingToolbarLayout.setExpandedTitleTextAppearance(R.style.ExpandedAppbar);
 //        collapsingToolbarLayout.setCollapsedTitleTextAppearance(R.style.CollapsedAppbar);
-        //Get product id from intent    
+
         if(getIntent() != null){
             productID = getIntent().getStringExtra("ProductId");
             productCategory = getIntent().getStringExtra("ProductCategory");
@@ -72,21 +78,29 @@ public class ProductDetail extends AppCompatActivity {
         if(!productID.isEmpty()){
             getDetailProduct(productID);
         }
+
     }
     private void getDetailProduct(final String productId){
         products.child("Category/" + productCategory + "/danh_sach/" + productId).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                  product = snapshot.getValue(Product.class);
-                //set Image
+
                 Glide.with(getBaseContext()).load(product.getImage())
                         .into(product_image);
-//                collapsingToolbarLayout.setTitle(product.getName());
+//             collapsingToolbarLayout.setTitle(product.getName());
 
                 product_price.setText(product.getGia());
                 product_name.setText(product.getName());
                 product_description.setText(product.getMota());
 
+                btnCart.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+//                        Cart.addToCart(product, soLuong);
+                        Toast.makeText(ProductDetail.this, "Added to cart", Toast.LENGTH_SHORT).show();
+                    }
+                });
             }
 
             @Override
@@ -95,14 +109,5 @@ public class ProductDetail extends AppCompatActivity {
             }
         });
     }
-//    public void changeCost(View view){
-//        Log.d("TAG","gia" + product_price.getText());
-//        Log.d("TAG","gia1" + Integer.parseInt(product.getGia()));
-//        Log.d("TAG","" +Integer.parseInt(numberButton.getNumber()));
-//        int newPrice = Integer.parseInt(product.getGia()) * Integer.parseInt(numberButton.getNumber());
-//        Log.d("TAG","newPrice " + newPrice);
-//        product_price.setText(newPrice + "");
-//        Log.d("TAG","gia" + product_price.getText());
-//        Log.d("TAG","" + Integer.parseInt(numberButton.getNumber()));
-//    }
+
 }
