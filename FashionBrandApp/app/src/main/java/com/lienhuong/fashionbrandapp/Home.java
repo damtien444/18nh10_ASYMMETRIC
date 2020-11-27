@@ -79,10 +79,6 @@ public class Home extends AppCompatActivity {
 //        if (FirebaseAuth.getInstance().getCurrentUser().getDisplayName().isEmpty())
 //            txtViewUsername.setText("Ban than men");
 //        else txtViewUsername.setText(FirebaseAuth.getInstance().getCurrentUser().getDisplayName());
-
-
-
-
     }
 
 
