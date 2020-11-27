@@ -13,6 +13,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".ProductDetail"
+            android:label="activity product"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
             android:name=".itemDetail.ItemDetailsDisplayerActivity"
             android:label="@string/title_activity_item_details_displayer"
             android:theme="@style/AppTheme.NoActionBar"></activity>

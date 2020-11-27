@@ -1,5 +1,6 @@
 package com.lienhuong.fashionbrandapp.itemDetail;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
@@ -13,6 +14,7 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.lienhuong.fashionbrandapp.ProductDetail;
 import com.lienhuong.fashionbrandapp.R;
 import com.lienhuong.fashionbrandapp.model.Product;
 import com.squareup.picasso.Picasso;
@@ -21,11 +23,15 @@ import com.squareup.picasso.Target;
 import java.util.ArrayList;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
+    private static String category;
     private ArrayList<Product> localDataSet;
     private Product tempProduct;
+    private static Context mainContext;
 
-
-    public MyAdapter(ArrayList<Product> dataSet) {
+    public MyAdapter(Context mainContext, ArrayList<Product> dataSet, String category)
+    {
+        this.category = category;
+        this.mainContext = mainContext;
         localDataSet = dataSet;
     }
 
@@ -90,9 +96,13 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 
         @Override
         public void onClick(View v) {
-            //Intent detailIntent = new Intent(ProductDetail.class);
-            //detailIntent.putExtra("ProductId", product_id);
-            //startActivity(detailIntent);
+            Intent detailIntent = new Intent(mainContext, ProductDetail.class);
+            detailIntent.putExtra("ProductId", product_id);
+            detailIntent.putExtra("ProductCategory", category  );
+            mainContext.startActivity(detailIntent);
         }
+
+
     }
+
 }
