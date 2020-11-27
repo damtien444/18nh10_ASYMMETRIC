@@ -15,6 +15,16 @@ public class Cart {
         }
     }
 
+    public static boolean addToCart(String id_san_pham, String id_category, String ten_san_pham, int so_luong, int tien) {
+        try {
+            Order order = new Order(id_san_pham, id_category, ten_san_pham, so_luong, tien);
+            Cart.orders.add(order);
+            return true;
+        } catch (Exception e) {
+            throw e;
+        }
+    }
+
     private static String UID;
 
     public static LinkedList<Order> getOrders() {

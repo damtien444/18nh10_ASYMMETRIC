@@ -97,7 +97,8 @@ public class ProductDetail extends AppCompatActivity {
                 btnCart.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
- //                      Cart.addToCart(product, productCategory,  soLuong);
+                        Cart.addToCart(product.getId(), productCategory, product.getName(), soLuong, Integer.parseInt(product.getGia()));
+                        Log.d("category", "onClick: " + productCategory);
                         Toast.makeText(ProductDetail.this, "Added to cart", Toast.LENGTH_SHORT).show();
                     }
                 });

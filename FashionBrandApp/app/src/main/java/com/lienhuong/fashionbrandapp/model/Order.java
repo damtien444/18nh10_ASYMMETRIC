@@ -7,9 +7,9 @@ public class Order {
     private String id_category;
     private String ten_san_pham;
     private int so_luong;
-    private String tien;
+    private int tien;
 
-    public Order(String id_san_pham, String id_category, String ten_san_pham, int so_luong, String tien) {
+    public Order(String id_san_pham, String id_category, String ten_san_pham, int so_luong, int tien) {
         this.id_san_pham = id_san_pham;
         this.id_category = id_category;
         this.ten_san_pham = ten_san_pham;
@@ -49,11 +49,11 @@ public class Order {
         this.so_luong = so_luong;
     }
 
-    public String getTien() {
+    public int getTien() {
         return tien;
     }
 
-    public void setTien(String tien) {
+    public void setTien(int tien) {
         this.tien = tien;
     }
 }
