@@ -63,13 +63,15 @@ public class ItemDetailsDisplayerActivity extends AppCompatActivity {
 
     private void populateListFromData(DataSnapshot dataSnapshot) {
         for(DataSnapshot productSnapshot: dataSnapshot.getChildren()){
-            productToDisplayList.add(productSnapshot.getValue(Product.class));
+            Product temp = productSnapshot.getValue(Product.class);
+            temp.setId(productSnapshot.getKey());
+            productToDisplayList.add(temp);
         }
     }
 
     private void createRecycleView(ArrayList<Product> productToDisplayList) {
         rv = findViewById(R.id.rv_detailItemList);
-        MyAdapter myAdapter = new MyAdapter(productToDisplayList);
+        MyAdapter myAdapter = new MyAdapter(this, productToDisplayList);
         rv.setAdapter(myAdapter);
         rv.setLayoutManager(new LinearLayoutManager(this));
     }

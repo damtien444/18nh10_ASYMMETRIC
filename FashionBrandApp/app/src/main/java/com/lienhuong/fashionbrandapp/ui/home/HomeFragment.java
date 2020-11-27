@@ -121,11 +121,11 @@ public class HomeFragment extends Fragment {
         adapter.startListening();
     }
 
-    @Override
-    public void onStop() {
-        super.onStop();
-        adapter.stopListening();
-    }
+//    @Override
+//    public void onStop() {
+//        super.onStop();
+//        adapter.stopListening();
+//    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
