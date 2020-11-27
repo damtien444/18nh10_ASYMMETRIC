@@ -26,8 +26,10 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     private ArrayList<Product> localDataSet;
     private Product tempProduct;
     private static Context mainContext;
+    private static String category;
 
-    public MyAdapter(Context mainContext, ArrayList<Product> dataSet) {
+    public MyAdapter(Context mainContext, ArrayList<Product> dataSet, String category) {
+        this.category = category;
         this.mainContext = mainContext;
         localDataSet = dataSet;
     }
@@ -95,6 +97,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         public void onClick(View v) {
             Intent detailIntent = new Intent(mainContext, ProductDetail.class);
             detailIntent.putExtra("ProductId", product_id);
+            detailIntent.putExtra("ProductCategory", category);
             mainContext.startActivity(detailIntent);
         }
     }
