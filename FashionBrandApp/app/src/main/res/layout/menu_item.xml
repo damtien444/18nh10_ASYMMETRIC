@@ -14,31 +14,32 @@
     android:foreground="?selectableItemBackground"
     android:clickable="true"
     android:layout_margin="20dp" >
-    
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
         <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
             android:id="@+id/menu_image"
-            android:scaleType="centerCrop"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_above="@+id/menu_name"
             app:srcCompat="@drawable/ic_launcher_background" />
 
         <TextView
+            android:id="@+id/menu_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/menu_name"
+            android:layout_alignParentBottom="true"
+            android:background="#ffffffff"
             android:fontFamily="@font/lora_bold"
+            android:gravity="center_horizontal"
             android:text="Name of Cate"
             android:textColor="#2E2A2A"
-            android:background="#ffffffff"
-            android:textSize="20sp"
-            android:gravity="left"
-            android:layout_alignParentBottom="true" />
+            android:textSize="25sp" />
 
 
-    </RelativeLayout>
+    </LinearLayout>
 
 </androidx.cardview.widget.CardView>
