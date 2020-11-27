@@ -26,6 +26,7 @@ public class ItemDetailsDisplayerActivity extends AppCompatActivity {
 
     private String category = FIREBASE_KEY_TO_CATEGORY;
     private Intent incomingIntent;
+
     private DatabaseReference firebaseReference;
 
     private RecyclerView rv;
@@ -62,16 +63,13 @@ public class ItemDetailsDisplayerActivity extends AppCompatActivity {
 
     private void populateListFromData(DataSnapshot dataSnapshot) {
         for(DataSnapshot productSnapshot: dataSnapshot.getChildren()){
-            Product temp = productSnapshot.getValue(Product.class);
-            temp.setId(productSnapshot.getKey());
-            Log.d("TAG", "id = " + productSnapshot.getKey());
-            productToDisplayList.add(temp);
+            productToDisplayList.add(productSnapshot.getValue(Product.class));
         }
     }
 
     private void createRecycleView(ArrayList<Product> productToDisplayList) {
         rv = findViewById(R.id.rv_detailItemList);
-        MyAdapter myAdapter = new MyAdapter(this, productToDisplayList , category);
+        MyAdapter myAdapter = new MyAdapter(productToDisplayList);
         rv.setAdapter(myAdapter);
         rv.setLayoutManager(new LinearLayoutManager(this));
     }
