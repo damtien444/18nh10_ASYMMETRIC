@@ -93,11 +93,11 @@ public class ProductDetail extends AppCompatActivity {
                 product_price.setText(product.getGia());
                 product_name.setText(product.getName());
                 product_description.setText(product.getMota());
-
+                product.setId(productId);
                 btnCart.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-//                        Cart.addToCart(product, soLuong);
+ //                      Cart.addToCart(product, productCategory,  soLuong);
                         Toast.makeText(ProductDetail.this, "Added to cart", Toast.LENGTH_SHORT).show();
                     }
                 });
