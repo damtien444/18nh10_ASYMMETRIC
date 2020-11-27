@@ -28,7 +28,6 @@ public class LogoutFragment extends Fragment {
         View root = inflater.inflate(R.layout.fragment_logout, container, false);
 
 //        if (!Objects.requireNonNull(firebaseAuth.getUid()).isEmpty())
-        firebaseAuth = FirebaseAuth.getInstance();
         firebaseAuth.signOut();
         startActivity(new Intent(getContext(), MainActivity.class));
         return root;
