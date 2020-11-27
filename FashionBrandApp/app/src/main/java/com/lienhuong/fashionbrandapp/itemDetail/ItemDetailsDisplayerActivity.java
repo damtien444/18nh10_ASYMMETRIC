@@ -71,7 +71,7 @@ public class ItemDetailsDisplayerActivity extends AppCompatActivity {
 
     private void createRecycleView(ArrayList<Product> productToDisplayList) {
         rv = findViewById(R.id.rv_detailItemList);
-        MyAdapter myAdapter = new MyAdapter(this, productToDisplayList);
+        MyAdapter myAdapter = new MyAdapter(this, productToDisplayList, category);
         rv.setAdapter(myAdapter);
         rv.setLayoutManager(new LinearLayoutManager(this));
     }
