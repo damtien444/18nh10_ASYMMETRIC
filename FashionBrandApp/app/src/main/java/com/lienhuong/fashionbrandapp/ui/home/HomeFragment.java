@@ -42,6 +42,9 @@ import com.lienhuong.fashionbrandapp.R;
 import com.lienhuong.fashionbrandapp.ViewHolder.MenuViewHolder;
 import com.lienhuong.fashionbrandapp.itemDetail.ItemDetailsDisplayerActivity;
 import com.lienhuong.fashionbrandapp.model.Category;
+import com.squareup.picasso.Picasso;
+
+import static com.firebase.ui.auth.AuthUI.getApplicationContext;
 
 public class HomeFragment extends Fragment {
 
@@ -90,18 +93,18 @@ public class HomeFragment extends Fragment {
             protected void onBindViewHolder(@NonNull MenuViewHolder viewHolder, int position, @NonNull Category model) {
 
                 viewHolder.textMenuName.setText(model.getName());
-                //Picasso.get(getApplicationContext()).load(model.getImage()).into(viewHolder.imageView);
-                Glide.with(getContext()).load(model.getImage())
-                        .centerCrop()
-                        .into(viewHolder.imageView);
+                Picasso.get().load(model.getImage()).into(viewHolder.imageView);
+//                Glide.with(getContext()).load(model.getImage())
+//                        .centerCrop()
+//                        .into(viewHolder.imageView);
 
-                Log.d("LET SEE", "onBindViewHolder: "+model.getName());
+                Log.d("LET SEE", "onBindViewHolder: " + model.getName());
                 final Category clickItem = model;
                 viewHolder.setItemClickListener(new ItemClickListener() {
                     @Override
                     public void onClick(View view, int position, boolean isLongClick
                     ) {
-                        Toast.makeText(getContext(), ""+clickItem.getName(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getContext(), "" + clickItem.getName(), Toast.LENGTH_SHORT).show();
 
 //                         goi den tri
                         Intent foodlist = new Intent(getContext(), ItemDetailsDisplayerActivity.class);
@@ -122,10 +125,17 @@ public class HomeFragment extends Fragment {
     }
 
     @Override
-    public void onStop() {
-        super.onStop();
-        adapter.stopListening();
+    public void onResume() {
+        super.onResume();
+        adapter.startListening();
     }
+
+
+    //    @Override
+//    public void onStop() {
+//        super.onStop();
+//        adapter.stopListening();
+//    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

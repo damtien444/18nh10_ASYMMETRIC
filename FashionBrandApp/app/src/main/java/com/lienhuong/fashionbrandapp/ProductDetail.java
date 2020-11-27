@@ -87,7 +87,6 @@ public class ProductDetail extends AppCompatActivity {
                 product_name.setText(product.getName());
                 product_description.setText(product.getMota());
 
-
             }
 
             @Override
