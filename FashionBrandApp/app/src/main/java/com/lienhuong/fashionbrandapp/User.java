@@ -1,5 +1,8 @@
 package com.lienhuong.fashionbrandapp;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 public class User {
     String Name;
     String Password;
