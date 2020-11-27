@@ -24,7 +24,7 @@ public class ItemDetailsDisplayerActivity extends AppCompatActivity {
     private static final String FIREBASE_KEY_TO_CATEGORY = "Category";
     private static final String FIREBASE_KEY_TO_LIST_OF_EACH_ITEM = "danh_sach";
 
-    private String category = FIREBASE_KEY_TO_CATEGORY;
+    private String category ;
     private Intent incomingIntent;
 
     private DatabaseReference firebaseReference;
@@ -42,14 +42,13 @@ public class ItemDetailsDisplayerActivity extends AppCompatActivity {
 
     private void getIncomingIntent() {
         incomingIntent = getIntent();
-
-        category += "/" + incomingIntent.getStringExtra(INTENT_INPUT_KEY_CATEGORY);
-        category += "/" + FIREBASE_KEY_TO_LIST_OF_EACH_ITEM;
+        category = incomingIntent.getStringExtra(INTENT_INPUT_KEY_CATEGORY);
     }
 
     private void loadViews() {
         firebaseReference = FirebaseDatabase.getInstance().getReference();
-        firebaseReference.child(category).addListenerForSingleValueEvent(new ValueEventListener() {
+        String pathToChild = FIREBASE_KEY_TO_CATEGORY + "/" + category + "/" + FIREBASE_KEY_TO_LIST_OF_EACH_ITEM;
+        firebaseReference.child(pathToChild).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 populateListFromData(dataSnapshot);
@@ -63,6 +62,7 @@ public class ItemDetailsDisplayerActivity extends AppCompatActivity {
 
     private void populateListFromData(DataSnapshot dataSnapshot) {
         for(DataSnapshot productSnapshot: dataSnapshot.getChildren()){
+            Log.d("TAG", "productSnapshot --> " + productSnapshot.toString());
             Product temp = productSnapshot.getValue(Product.class);
             temp.setId(productSnapshot.getKey());
             productToDisplayList.add(temp);
