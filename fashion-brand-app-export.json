@@ -1,0 +1,166 @@
+﻿{
+  "Category": {
+    "Ao": {
+      "01": {
+        "Name": "ao1",
+        "Image": "https://static.e-stradivarius.net/5/photos3/2020/I/0/1/p/5145/502/001/5145502001_1_1_2.jpg?t=1602846519072",
+        "Mota": "Áo len cổ tròn dài tay",
+        "Color": "Đen và xám",
+        "Gia": "299000"
+      },
+      "02": {
+        "Name": "ao2",
+        "Image": "https://static.e-stradivarius.net/5/photos3/2020/I/0/1/p/8864/148/001/8864148001_1_1_2.jpg?t=1604941645531",
+        "Mota": "Áo len xẻ ngực cá tính",
+        "Color": "Đen",
+        "Gia": "199000"
+      },
+      "03": {
+        "Name": "ao3",
+        "Image": "https://static.e-stradivarius.net/5/photos3/2020/I/0/1/p/5108/244/415/5108244415_2_1_2.jpg?t=1600705610638",
+        "Mota": "Áo cadigan tay dài có cổ chữ V",
+        "Color": "Nâu",
+        "Gia": "259000"
+      },
+      "04": {
+        "Name": "ao4",
+        "Image": "https://static.e-stradivarius.net/5/photos3/2020/I/0/1/p/5114/467/210/5114467210_2_1_2.jpg?t=1603897276332",
+        "Mota": "Áo gile cổ V oversize với những đường cắt gân nổi",
+        "Color": "Xám chuột",
+        "Gia": "229000"
+      },
+      "05": {
+        "Name": "ao5",
+        "Image": "https://static.e-stradivarius.net/5/photos3/2020/I/0/1/p/5146/147/148/5146147148_1_1_2.jpg?t=1603120330934",
+        "Mota": "Áo len dáng croptop tay dài cổ cao",
+        "Color": "Hồng",
+        "Gia": "259000"
+      }
+    },
+    "Quan": {
+      "01": {
+        "Name": "quan1",
+        "Image": "https://static.bershka.net/4/photos2/2020/I/0/1/p/5004/888/401/5004888401_2_3_3.jpg?t=1597326207876",
+        "Mota": "Quần Jeans cạp cao",
+        "Color": "Xanh đậm",
+        "Gia": "499000"
+      },
+      "02": {
+        "Name": "quan2",
+        "Image": "https://static.bershka.net/4/photos2/2020/I/0/1/p/5033/851/800/5033851800_2_3_3.jpg?t=1602671405254",
+        "Mota": "Quần Jeans ống suông rách gối",
+        "Color": "Xám",
+        "Gia": "429000"
+      },
+      "03": {
+        "Name": "quan3",
+        "Image": "https://static.e-stradivarius.net/5/photos3/2020/I/0/1/p/8478/214/701/8478214701_1_1_2.jpg?t=1597917135010",
+        "Mota": "Quần ống loe",
+        "Color": "Xám",
+        "Gia": "429000"
+      },
+      "04": {
+        "Name": "quan4",
+        "Image": "https://static.bershka.net/4/photos2/2020/I/0/1/p/5194/179/428/5194179428_1_1_3.jpg?t=1601477047866",
+        "Mota": "Quần Jeans in họa tiết đặc sắc",
+        "Color": "Xanh",
+        "Gia": "329000"
+      },
+      "05": {
+        "Name": "quan5",
+        "Image": "https://static.e-stradivarius.net/5/photos3/2020/I/0/1/p/4635/635/001/4635635001_1_1_2.jpg?t=1604402120686",
+        "Mota": "Quần Legging đen trơn",
+        "Color": "Xám",
+        "Gia": "219000"
+      }
+    },
+    "Giay": {
+      "01": {
+        "Name": "giay1",
+        "Image": "https://static.bershka.net/4/photos2/2020/I/1/1/p/1454/660/001/1454660001_1_1_3.jpg?t=1602759608301",
+        "Mota": "Giày bánh mỳ",
+        "Color": "Trắng",
+        "Gia": "689000"
+      },
+      "02": {
+        "Name": "giay2",
+        "Image": "https://static.bershka.net/4/photos2/2021/V/1/1/p/1301/760/005/1301760005_1_1_3.jpg?t=1605010718526",
+        "Mota": "Giày cao gót ánh bạc",
+        "Color": "Xám bạc",
+        "Gia": "729000"
+      },
+      "03": {
+        "Name": "giay3",
+        "Image": "https://static.bershka.net/4/photos2/2020/I/1/1/p/5510/031/040/5510031040_2_2_3.jpg?t=1605087684094",
+        "Mota": "Giày cao gót mũi nhọn da lộn",
+        "Color": "Đen",
+        "Gia": "519000"
+      },
+      "04": {
+        "Name": "giay4",
+        "Image": "https://static.bershka.net/4/photos2/2020/I/1/1/p/1455/660/202/1455660202_2_3_3.jpg?t=1603187060794",
+        "Mota": "Giày sneaker phối màu",
+        "Color": "Hồng trắng",
+        "Gia": "809000"
+      },
+      "05": {
+        "Name": "giay5",
+        "Image": "https://static.bershka.net/4/photos2/2020/I/1/1/p/1230/660/001/1230660001_2_3_3.jpg?t=1603797015199",
+        "Mota": "Boots da phối cá tính",
+        "Color": "Trắng",
+        "Gia": "789000"
+      }
+    },
+    "PhuKien": {
+      "01": {
+        "Name": "phukien1",
+        "Image": "https://www.charleskeith.com/dw/image/v2/BCWJ_PRD/on/demandware.static/-/Sites-ck-products/default/dw1681f6cc/images/hi-res/2020-L4-CK2-20781264-24-3.jpg?sw=1152&sh=1536",
+        "Mota": "Túi đeo vai xu hướng của mùa này nổi tiếng với thiết kế dệt tinh tế và in hình rắn độc đáo",
+        "Color": "Đen",
+        "Gia": "1499000"
+      },
+      "02": {
+        "Name": "phukien2",
+        "Image": "https://www.charleskeith.com/dw/image/v2/BCWJ_PRD/on/demandware.static/-/Sites-ck-products/default/dw18ecffed/images/hi-res/2020-L3-CK2-80270629-17-6.jpg?sw=1152&sh=1536",
+        "Mota": "Đơn giản và sang trọng, nhờ phần thân được in bằng hình ảnh và đủ rộng rãi để chứa các vật dụng cần thiết hàng ngày của bạn",
+        "Color": "Cam",
+        "Gia": "1299000"
+      },
+      "03": {
+        "Name": "phukien3",
+        "Image": "https://www.charleskeith.com/dw/image/v2/BCWJ_PRD/on/demandware.static/-/Sites-ck-products/default/dw9c7fafc3/images/hi-res/2020-L6-CK2-50781326-21-4.jpg?sw=1152&sh=1536",
+        "Mota": "Hãy để chiếc túi màu xanh mòng két sang trọng này đưa bạn qua mùa thu này và xa hơn nữa với phong cách tinh tế",
+        "Color": "Xanh",
+        "Gia": "999000"
+      },
+      "04": {
+        "Name": "phukien4",
+        "Image": "https://www.charleskeith.com/dw/image/v2/BCWJ_PRD/on/demandware.static/-/Sites-ck-products/default/dw78d5eb1d/images/hi-res/2019-L6-CK3-31280381-34-2.jpg?sw=1152&sh=1536",
+        "Mota": "Kính râm gọng tròn làm từ bằng đá cẩm thạch đen",
+        "Color": "Đen",
+        "Gia": "879000"
+      },
+      "05": {
+        "Name": "phukien5",
+        "Image": "https://www.charleskeith.com/dw/image/v2/BCWJ_PRD/on/demandware.static/-/Sites-ck-products/default/dw3baba9a3/images/hi-res/2020-L3-CK3-71280416-01-4.jpg?sw=1152&sh=1536",
+        "Mota": "Kính râm với thiết kế cut-out và tông màu đen, đôi này sẽ tạo thêm điểm nhấn",
+        "Color": "Đen",
+        "Gia": "469000"
+      },
+      "06": {
+        "Name": "phukien6",
+        "Image": "https://static.bershka.net/4/photos2/2020/I/0/1/p/8904/920/712/8904920712_2_1_3.jpg?t=1600691691459",
+        "Mota": "Mũ lông họa tiết da beo độc đáo",
+        "Color": "Da beo",
+        "Gia": "299000"
+      },
+      "07": {
+        "Name": "phukien7",
+        "Image": "https://www.charleskeith.com/dw/image/v2/BCWJ_PRD/on/demandware.static/-/Sites-ck-products/default/dw2690fa0f/images/hi-res/2020-L3-CK5-32120252-57-6.jpg?sw=1152&sh=1536",
+        "Mota": "Nhẫn đính pha lê cực tinh xảo",
+        "Color": "Hồng vàng",
+        "Gia": "1379000"
+      }
+    }
+  }
+}
