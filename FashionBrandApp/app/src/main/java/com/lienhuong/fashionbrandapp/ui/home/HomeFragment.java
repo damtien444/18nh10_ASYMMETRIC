@@ -60,7 +60,7 @@ public class HomeFragment extends Fragment {
 
         recycler_menu = root.findViewById(R.id.recycler_menu);
         recycler_menu.setHasFixedSize(true);
-        layoutManager = new LinearLayoutManager(root.getContext());
+        layoutManager = new GridLayoutManager(root.getContext(), 2);
         recycler_menu.setLayoutManager(layoutManager);
         loadMenu();
         return root;

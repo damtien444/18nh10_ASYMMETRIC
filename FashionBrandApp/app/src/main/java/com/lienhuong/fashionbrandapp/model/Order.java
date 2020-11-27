@@ -1,0 +1,50 @@
+package com.lienhuong.fashionbrandapp.model;
+
+
+public class Order {
+
+    private String id_san_pham;
+    private String ten_san_pham;
+    private int so_luong;
+    private String tien;
+
+
+    public Order(String id_san_pham, String ten_san_pham, int so_luong, String tien) {
+        this.id_san_pham = id_san_pham;
+        this.ten_san_pham = ten_san_pham;
+        this.so_luong = so_luong;
+        this.tien = tien;
+    }
+
+    public String getId_san_pham() {
+        return id_san_pham;
+    }
+
+    public void setId_san_pham(String id_san_pham) {
+        this.id_san_pham = id_san_pham;
+    }
+
+    public String getTen_san_pham() {
+        return ten_san_pham;
+    }
+
+    public void setTen_san_pham(String ten_san_pham) {
+        this.ten_san_pham = ten_san_pham;
+    }
+
+    public int getSo_luong() {
+        return so_luong;
+    }
+
+    public void setSo_luong(int so_luong) {
+        this.so_luong = so_luong;
+    }
+
+    public String getTien() {
+        return tien;
+    }
+
+    public void setTien(String tien) {
+        this.tien = tien;
+    }
+}

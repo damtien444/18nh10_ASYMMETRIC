@@ -33,22 +33,22 @@ public class WelcomeActivity extends AppCompatActivity {
 
             // Checking for first time launch - before calling setContentView()
             prefManager = new PrefManager(this);
-//            if (!prefManager.isFirstTimeLaunch()) {
-//                launchHomeScreen();
-//                finish();
-//            }
+            if (!prefManager.isFirstTimeLaunch()){
+                launchHomeScreen();
+                finish();
+            }
 
             // Making notification bar transparent
-            if (Build.VERSION.SDK_INT >= 21) {
+            if (Build.VERSION.SDK_INT >= 21){
                 getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
             }
 
             setContentView(R.layout.activity_welcome);
 
-            viewPager = (ViewPager) findViewById(R.id.view_pager);
-            dotsLayout = (LinearLayout) findViewById(R.id.layoutDots);
-            btnSkip = (Button) findViewById(R.id.btn_skip);
-            btnNext = (Button) findViewById(R.id.btn_next);
+            viewPager = findViewById(R.id.view_pager);
+            dotsLayout = findViewById(R.id.layoutDots);
+            btnSkip = findViewById(R.id.btn_skip);
+            btnNext = findViewById(R.id.btn_next);
 
 
             // layouts of all welcome sliders
