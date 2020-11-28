@@ -5,6 +5,7 @@ import java.util.LinkedList;
 
 public class Cart {
     public static ArrayList<Order> orders = new ArrayList<Order>();
+
     public Cart(){
     }
     public static boolean addToCart(Order order) {

@@ -10,9 +10,11 @@
     android:padding="16dp">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
         android:id="@+id/listCart"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+
+        android:layout_centerInParent="true"
         android:background="@android:color/transparent" />
 
     <androidx.cardview.widget.CardView
@@ -63,6 +65,8 @@
                 android:layout_marginBottom="11dp"
                 android:background="#6eda64"
                 android:text="PLACE ORDER"
+                android:clickable="true"
+
                 android:textColor="@color/colorPrimary" />
 
 

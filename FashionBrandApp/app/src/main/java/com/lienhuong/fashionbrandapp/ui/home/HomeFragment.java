@@ -94,9 +94,6 @@ public class HomeFragment extends Fragment {
 
                 viewHolder.textMenuName.setText(model.getName());
                 Picasso.get().load(model.getImage()).into(viewHolder.imageView);
-//                Glide.with(getContext()).load(model.getImage())
-//                        .centerCrop()
-//                        .into(viewHolder.imageView);
 
                 Log.d("LET SEE", "onBindViewHolder: " + model.getName());
                 final Category clickItem = model;
@@ -106,7 +103,6 @@ public class HomeFragment extends Fragment {
                     ) {
                         Toast.makeText(getContext(), "" + clickItem.getName(), Toast.LENGTH_SHORT).show();
 
-//                         goi den tri
                         Intent foodlist = new Intent(getContext(), ItemDetailsDisplayerActivity.class);
                         foodlist.putExtra("category", adapter.getRef(position).getKey());
                         startActivity(foodlist);

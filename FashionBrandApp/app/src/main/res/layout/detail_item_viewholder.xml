@@ -1,53 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
+<androidx.cardview.widget.CardView xmlns:card_view="http://schemas.android.com/tools"
     android:id="@+id/detail_item"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_height="wrap_content"
     android:layout_width="match_parent"
     android:layout_gravity="center"
-    >
+    card_view:cardBackgroundColor="#FFFF"
+    card_view:cardCornerRadius="20dp"
+    card_view:contentPadding="10dp"
+    android:foreground="?selectableItemBackground"
+    android:clickable="true"
+    android:layout_margin="20dp">
 
     <androidx.appcompat.widget.LinearLayoutCompat
-        android:background="@color/cardview_light_background"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/cardview_light_background"
         android:orientation="vertical">
+
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/product_display_image"
             android:layout_width="match_parent"
             android:layout_height="300dp"
-            android:adjustViewBounds="true"
-            />
+            android:adjustViewBounds="true" />
 
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
             android:layout_height="30dp"
             android:orientation="horizontal">
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:text="Product Name: " />
-
-            <androidx.appcompat.widget.AppCompatTextView
+            <TextView
                 android:id="@+id/name"
                 android:layout_width="150dp"
                 android:layout_height="match_parent"
-                android:text="name HERE" />
+                android:fontFamily="@font/lora_bold"
+                android:text="name HERE"
+                android:textSize="20sp" />
 
-            <androidx.appcompat.widget.AppCompatTextView
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="PRICE: "
-                android:textAlignment="viewEnd"/>
+                android:layout_gravity="center_vertical"
 
-            <androidx.appcompat.widget.AppCompatTextView
+                android:text="Đơn giá: "
+                android:textStyle="italic" />
+
+            <TextView
                 android:id="@+id/price"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+
                 android:text="100000"
-                android:textAlignment="viewEnd"/>
+                android:textAlignment="viewEnd" />
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 

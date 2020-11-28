@@ -1,20 +1,36 @@
 package com.lienhuong.fashionbrandapp.model;
 
-import java.sql.Timestamp;
+
+import java.util.ArrayList;
+import java.util.LinkedList;
 
 public class PostMessage {
-    public final  int id;
-    public final String author;
-    public final String content;
-    public final Timestamp timestamp;
-    public final String backgroundColor;
 
-    public PostMessage(int id, String author, String content, Timestamp timestamp, String backgroundColor) {
-        this.id = id;
-        this.author = author;
-        this.content = content;
-        this.timestamp = timestamp;
-        this.backgroundColor = backgroundColor;
+    private ArrayList<Order> orders;
+    private String UID;
+
+    public PostMessage() {
+    }
+
+    public PostMessage(ArrayList orders, String UID) {
+        this.orders = orders;
+        this.UID = UID;
+    }
+
+    public ArrayList getOrders() {
+        return orders;
+    }
+
+    public void setOrders(ArrayList orders) {
+        this.orders = orders;
+    }
+
+    public String getUID() {
+        return UID;
+    }
+
+    public void setUID(String UID) {
+        this.UID = UID;
     }
 }
 

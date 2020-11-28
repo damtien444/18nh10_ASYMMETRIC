@@ -48,34 +48,32 @@ public class ProductDetail extends AppCompatActivity {
         products = database.getReference();
 
 
-        numberButton = (ElegantNumberButton) findViewById(R.id.number_button);
+        numberButton = findViewById(R.id.number_button);
         numberButton.setOnValueChangeListener(new ElegantNumberButton.OnValueChangeListener() {
             @Override
             public void onValueChange(ElegantNumberButton view, int oldValue, int newValue) {
 
                 int newPrice = Integer.parseInt(product.getGia()) * newValue;
-                Log.d("TAG","newPrice " + newPrice);
+                Log.d("TAG", "newPrice " + newPrice);
                 product_price.setText(newPrice + "");
                 soLuong = newValue;
             }
         });
-        btnCart = (FloatingActionButton) findViewById(R.id.btnCart);
-
-
-        product_description = (TextView) findViewById(R.id.product_description);
-        product_name = (TextView) findViewById(R.id.product_name);
-        product_price = (TextView) findViewById(R.id.product_price);
-        product_image = (ImageView) findViewById(R.id.img_product);
+        btnCart = findViewById(R.id.btnCart);
+        product_description = findViewById(R.id.product_description);
+        product_name = findViewById(R.id.product_name);
+        product_price = findViewById(R.id.product_price);
+        product_image = findViewById(R.id.img_product);
 
 //        collapsingToolbarLayout = (CollapsingToolbarLayout)findViewById(R.id.collapsing);
 //        collapsingToolbarLayout.setExpandedTitleTextAppearance(R.style.ExpandedAppbar);
 //        collapsingToolbarLayout.setCollapsedTitleTextAppearance(R.style.CollapsedAppbar);
 
-        if(getIntent() != null){
+        if (getIntent() != null){
             productID = getIntent().getStringExtra("ProductId");
             productCategory = getIntent().getStringExtra("ProductCategory");
         }
-        if(!productID.isEmpty()){
+        if (!productID.isEmpty()){
             getDetailProduct(productID);
         }
 
