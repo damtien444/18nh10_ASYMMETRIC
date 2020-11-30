@@ -7,6 +7,7 @@ import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -87,7 +88,7 @@ public class ItemDetailsDisplayerActivity extends AppCompatActivity {
         rv = findViewById(R.id.rv_detailItemList);
         MyAdapter myAdapter = new MyAdapter(this, productToDisplayList, category);
         rv.setAdapter(myAdapter);
-        rv.setLayoutManager(new LinearLayoutManager(this));
+        rv.setLayoutManager(new GridLayoutManager(this,2));
     }
 
 }
