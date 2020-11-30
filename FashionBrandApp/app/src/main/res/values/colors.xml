@@ -4,7 +4,8 @@
     <color name="red">#F27459</color>
 
     <color name="colorPrimary">#004d40</color>
-    <color name="colorPrimaryDark">#00251a</color>
+    <color name="colorPrimaryDark">#000000</color>
+    <color name="colorPrimaryWhite">#ffffff</color>
     <color name="colorAccent">#39796b</color>
 
     <!-- Screens background color-->
