@@ -72,7 +72,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 
         public void populateData(Product targetProduct){
             this.textView_description.setText(targetProduct.getMota());
-            this.textView_price.setText(targetProduct.getGia() + " $");
+            this.textView_price.setText(targetProduct.getGia() + " VND");
             this.textView_name.setText(targetProduct.getName());
             loadFromImageURIToImageView(targetProduct);
 

@@ -22,7 +22,7 @@
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
             android:name=".Home"
-            android:label="@string/title_activity_home"
+            android:label="Fashion Brand"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".WelcomeActivity">
             <intent-filter>

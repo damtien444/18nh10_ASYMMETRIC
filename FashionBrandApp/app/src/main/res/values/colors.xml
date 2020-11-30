@@ -24,6 +24,9 @@
     <color name="dot_light_screen2">#8cf9eb</color>
     <color name="dot_light_screen3">#93c6fd</color>
     <color name="dot_light_screen4">#e4b5fc</color>
+    <color name="circle"> #000000</color>
+    <color name="bgimg">#ebebeb</color>
+
 
     <array name="array_dot_active">
         <item>@color/dot_light_screen1</item>
