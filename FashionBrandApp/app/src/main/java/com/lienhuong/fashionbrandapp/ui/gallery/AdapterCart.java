@@ -72,5 +72,6 @@ public class AdapterCart extends RecyclerView.Adapter<AdapterCart.MyViewHolder>{
             txt_price = (TextView) view.findViewById(R.id.cart_item_price);
             txt_cart_count = (TextView) view.findViewById(R.id.cart_item_count);
         }
+        
     }
 }
