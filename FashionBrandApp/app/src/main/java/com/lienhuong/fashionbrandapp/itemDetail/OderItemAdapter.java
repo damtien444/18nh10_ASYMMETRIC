@@ -39,7 +39,7 @@ public class OderItemAdapter extends RecyclerView.Adapter<OderItemAdapter.OderVi
     public void onBindViewHolder(@NonNull OderViewHolder holder, int position) {
         Order order = orders.get(position);
 
-        holder.tien.setText(order.getTien() + "");
+        holder.tien.setText(order.getTien() + " VND");
         holder.ten.setText(order.getTen_san_pham());
         holder.so_luong.setText(order.getSo_luong() + "");
         Log.d("hehe", "onBindViewHolder: " + holder.ten.getText().toString() + " " + holder.so_luong.getText().toString());
