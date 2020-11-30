@@ -9,6 +9,9 @@ public class Order {
     private int so_luong;
     private int tien;
 
+    public Order() {
+    }
+
     public Order(String id_san_pham, String id_category, String ten_san_pham, int so_luong, int tien) {
         this.id_san_pham = id_san_pham;
         this.id_category = id_category;

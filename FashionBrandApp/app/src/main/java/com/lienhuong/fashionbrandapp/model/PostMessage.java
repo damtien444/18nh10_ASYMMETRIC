@@ -23,12 +23,28 @@ public class PostMessage {
         this.name = name;
     }
 
-    public String getName() {
-        return name;
+    public ArrayList<Order> getOrders() {
+        return orders;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setOrders(ArrayList<Order> orders) {
+        this.orders = orders;
+    }
+
+    public String getUID() {
+        return UID;
+    }
+
+    public void setUID(String UID) {
+        this.UID = UID;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     public String getPhone() {
@@ -39,30 +55,12 @@ public class PostMessage {
         this.phone = phone;
     }
 
-
-    public ArrayList getOrders() {
-        return orders;
+    public String getName() {
+        return name;
     }
 
-
-    public String getUID() {
-        return UID;
-    }
-
-    public void setUID(String UID) {
-        this.UID = UID;
-    }
-
-    public void setOrders(ArrayList<Order> orders) {
-        this.orders = orders;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
+    public void setName(String name) {
+        this.name = name;
     }
 }
 

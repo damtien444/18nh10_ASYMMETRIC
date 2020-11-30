@@ -68,6 +68,7 @@ public class GalleryFragment extends Fragment {
             total = total + Cart.orders.get(i).getTien() * Cart.orders.get(i).getSo_luong();
         }
 
+
         txt_total.setText(" " + total + " VND");
 
         btn_place_order.setOnClickListener(new View.OnClickListener() {
@@ -76,7 +77,7 @@ public class GalleryFragment extends Fragment {
                 showAlertDialog();
             }
         });
-        
+
 
         ItemTouchHelper.SimpleCallback itemTouchHelperCallback = new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT) {
             @Override

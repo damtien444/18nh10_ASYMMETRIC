@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+
+
+    android:orientation="horizontal">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ten_hang"
+        android:text="Aos quan">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/so_luong"
+        android:layout_width="90dp"
+        android:layout_height="wrap_content"
+        android:text="2" />
+
+    <TextView
+        android:id="@+id/tong_tien"
+        android:layout_width="177dp"
+        android:layout_height="wrap_content"
+        android:text="3.000.000đ"
+
+        />
+
+</LinearLayout>
