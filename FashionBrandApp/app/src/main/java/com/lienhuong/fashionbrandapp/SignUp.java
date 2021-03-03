@@ -33,6 +33,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import static android.widget.Toast.LENGTH_SHORT;
 
+
 public class SignUp extends AppCompatActivity {
     private FirebaseAuth firebaseAuth,mAuth;
     private static final String TAG="";
